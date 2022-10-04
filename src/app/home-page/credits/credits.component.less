@@ -1,0 +1,140 @@
+//Миксины и переменные для стилей текста
+@blackColor: #000000;
+@green: #22A33F;
+@cardBg:#EEF8F0;
+@buttonBg:#22A33F;
+
+@bold: 'Agrofont-Bold';
+
+.textStyles(@ff,@fw,@fz,@lh,@color){
+    font-family: @ff;
+    font-style: normal;
+    font-weight: @fw;
+    font-size: @fz;
+    line-height: @lh;
+    color: @color;
+}
+
+//--------------------------------
+
+.wrapper{
+    padding: 0 20px;
+}
+
+.container{
+    padding: 70px 0;
+    max-width:1290px;
+    margin: 0 auto;
+
+    @media (max-width: 1199px) {
+        padding: 40px 0;
+    }
+    @media (max-width: 991px) {
+        padding: 40px 0;
+    }
+    @media (max-width: 767px) {
+        padding: 40px 0;
+    }
+
+    @media (max-width: 574px) {
+        padding: 30px 0;
+    }
+}
+
+h1{
+    .textStyles(@bold, 700, 32px, 125%, @blackColor);
+    @media (max-width: 1199px) {
+        .textStyles(@bold, 700, 25px, 125%, @blackColor); 
+    }
+    @media (max-width: 991px) {
+        .textStyles(@bold, 700, 20px, 125%, @blackColor); 
+    }
+    @media (max-width: 767px) {
+        .textStyles(@bold, 700, 22px, 125%, @blackColor); 
+    }
+
+    @media (max-width: 574px) {
+        .textStyles(@bold, 700, 18px, 125%, @blackColor); 
+    }
+}
+
+::ng-deep .ant-card-bordered{
+   border: none;
+}
+
+::ng-deep .ant-card-body{
+    border-radius: 12px;
+    background: @cardBg;
+    padding: 20px 0 20px 30px;
+    @media (max-width: 767px) {
+        padding: 20px 0 20px 20px;
+    }
+}
+
+.title{
+    .textStyles(@bold, 700, 24px, 125%, @green);
+
+    @media (max-width: 1199px) {
+        .textStyles(@bold, 700, 20px, 125%, @green); 
+        min-height: 75px;
+    }
+
+    @media (max-width: 991px) {
+        .textStyles(@bold, 700, 16px, 125%, @green);
+        min-height: 60px; 
+    }
+
+    @media (max-width: 767px) {
+        .textStyles(@bold, 700, 20px, 125%, @green); 
+        min-height: 75px; 
+    }
+
+    @media (max-width: 574px) {
+        .textStyles(@bold, 700, 16px, 125%, @green); 
+        min-height: 80px;
+    }
+}
+
+[nz-row]{
+    min-height: 100%;
+}
+
+.img{
+    &__container{
+        width: 100%;
+        height: 100%;
+
+        img{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        } 
+    }
+}
+
+[nz-button]{
+    width: 125px;
+    height: 44px;
+    border: none;
+    background: @buttonBg;
+    border-radius: 8px;
+    transition: 0.5s;
+
+    &:hover{
+        background: #29C34C;
+        transition: 0.5s;
+    }
+
+    &:active{
+        background: #1E8F37;
+    }
+
+    @media (max-width: 991px) {
+        height: 40px;
+    }
+
+    @media (max-width: 767px) {
+        height: 44px;
+    }
+}

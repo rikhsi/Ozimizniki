@@ -1,0 +1,56 @@
+//Миксины и переменные для стилей текста
+@grey:#86898C;
+@orange: #333333;
+@blackColor: #000000;
+@green: #22A33F;
+
+@bold: 'Agrofont-Bold';
+@medium: 'Agrofont-Medium';
+@regular:'Agrofont-Regular';
+
+.textStyles(@ff,@fw,@fz,@lh,@color){
+    font-family: @ff;
+    font-style: normal;
+    font-weight: @fw;
+    font-size: @fz;
+    line-height: @lh;
+    color: @color;
+}
+//--------------------------------
+
+.container{
+    border-top: 1px solid #CFD3D8;
+    border-bottom: 1px solid #CFD3D8;
+    padding: 24px 0;
+
+    @media (max-width:1199px) {
+        padding: 16px 0;
+    }
+
+    @media (max-width:767px) {
+        padding: 20px 0;
+    }
+
+    @media (max-width:575px) {
+        padding: 16px 0;
+    }
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .textStyles(@regular, 400, 12px, 12px, @grey);
+
+    @media (max-width:1199px) {
+        .textStyles(@regular, 400, 11px, 12px, @grey);
+    }
+
+    @media (max-width:767px) { 
+        .textStyles(@regular, 400, 12px, 12px, @grey);
+    }
+
+    @media (max-width:575px) {
+        .textStyles(@regular, 400, 11px, 12px, @grey);
+    }
+}

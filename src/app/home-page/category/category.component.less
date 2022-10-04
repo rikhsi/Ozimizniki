@@ -1,0 +1,143 @@
+//Миксины и переменные для стилей текста
+@blackColor: #000000;
+@cardBg:#F6F7FA;
+@navigationColor: #377BE1;
+
+@bold: 'Agrofont-Bold';
+@medium: 'Agrofont-Medium';
+@regular:'Agrofont-Regular';
+
+.textStyles(@ff,@fw,@fz,@lh,@color){
+    font-family: @ff;
+    font-style: normal;
+    font-weight: @fw;
+    font-size: @fz;
+    line-height: @lh;
+    color: @color;
+}
+
+//--------------------------------
+
+.wrapper{
+    padding: 0 30px;
+    @media (max-width: 1199px) {
+        padding: 0 20px;
+    }
+}
+
+.container{
+    padding: 70px 0;
+    max-width:1290px;
+    margin: 0 auto;
+
+    @media (max-width: 1199px) {
+        padding: 40px 0;
+    }
+    @media (max-width: 991px) {
+        padding: 40px 0;
+    }
+    @media (max-width: 767px) {
+        padding: 40px 0;
+    }
+
+    @media (max-width: 574px) {
+        padding: 30px 0;
+    }
+}
+
+h1{
+    .textStyles(@bold, 700, 32px, 125%, @blackColor);
+    @media (max-width: 1199px) {
+        .textStyles(@bold, 700, 25px, 125%, @blackColor); 
+    }
+    @media (max-width: 991px) {
+        .textStyles(@bold, 700, 20px, 125%, @blackColor); 
+    }
+    @media (max-width: 767px) {
+        .textStyles(@bold, 700, 22px, 125%, @blackColor); 
+    }
+
+    @media (max-width: 574px) {
+        .textStyles(@bold, 700, 18px, 125%, @blackColor); 
+    }
+}
+
+
+.navigation{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: inherit;
+    .textStyles(@regular, 400, 16px, 125%, @navigationColor);
+   
+    @media (max-width:1199px) {
+        .textStyles(@regular, 400, 14px, 125%, @navigationColor);
+    }
+}
+
+
+[nz-row]{
+    min-height: 100%;
+}
+
+.img{
+    width: 50px;
+    height: 50px;
+}
+
+.swiper{
+    height: 120px;
+
+    @media (max-width:1199px) {
+        height: 100px;
+    }
+}
+
+.card{
+    cursor: pointer;
+    padding: 35px 20px 35px 30px;
+    max-height: 120px;
+    background: @cardBg;
+    border-radius: 12px;
+
+    @media (max-width:1199px) {
+        padding: 30px 20px 0 20px;
+        min-height: 100%;
+    }
+
+    &:hover{
+        background: #FFFFFF;
+        box-shadow: 0px 0px 30px rgba(26, 26, 26, 0.1);
+        transition: 0.2s;
+    }
+
+    &:active{
+        background: #FFFFFF;
+        border: 1.5px solid #377BE1;
+    }
+}
+
+.card__container{
+    display: flex;
+    align-items:center;
+    gap: 24px;
+
+    img{
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+
+        @media (max-width:1199px) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+.type{
+    .textStyles(@medium, 500, 16px, 20px, @blackColor);
+    word-break: break-word;
+    @media (max-width: 1199px) {
+        .textStyles(@medium, 500, 14px, 18px, @blackColor);
+    }
+}

@@ -1,0 +1,41 @@
+//Миксины и переменные для стилей текста
+@grey:#86898C;
+@orange: #333333;
+@blackColor: #000000;
+@green: #22A33F;
+
+@bold: 'Agrofont-Bold';
+@medium: 'Agrofont-Medium';
+@regular:'Agrofont-Regular';
+
+.textStyles(@ff,@fw,@fz,@lh,@color){
+    font-family: @ff;
+    font-style: normal;
+    font-weight: @fw;
+    font-size: @fz;
+    line-height: @lh;
+    color: @color;
+}
+//--------------------------------
+
+
+svg{
+    width: 44px;
+    height: 44px;
+}
+
+.time{
+    .textStyles(@medium, 500, 14px, 18px, @blackColor);
+}
+
+
+.gradus{
+    .textStyles(@regular, 400, 14px, 18px, @blackColor);
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}

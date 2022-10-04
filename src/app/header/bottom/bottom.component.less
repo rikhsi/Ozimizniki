@@ -1,0 +1,90 @@
+//Миксины и переменные для стилей текста
+@grey:#86898C;
+@blackColor: #000000;
+@green: #00CD69;
+
+@bold: 'Agrofont-Bold';
+@medium: 'Agrofont-Medium';
+@regular:'Agrofont-Regular';
+
+.textStyles(@ff,@fw,@fz,@lh,@color){
+    font-family: @ff;
+    font-style: normal;
+    font-weight: @fw;
+    font-size: @fz;
+    line-height: @lh;
+    color: @color;
+}
+
+//--------------------------------
+
+button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 8px;
+    .textStyles(@regular, 400, 16px, 125%, #ffffff);
+
+}
+
+.catalog{
+    width: 133px;
+    height: 40px;
+    background: #377BE1 !important; 
+}
+
+.add{
+    width: 220px;
+    height: 40px;
+    background: #00CD69;
+
+    @media (max-width:1199px) {
+        width: 40px;
+        height: 40px;
+        span{
+            display: none;        
+        }
+    }
+}
+
+input{
+    padding-left: 20px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #CFD3D8;
+    border-radius: 8px 0px 0px 8px;
+    .textStyles(@regular, 400, 16px, 20px, @grey);
+
+    &::placeholder{
+        .textStyles(@regular, 400, 16px, 20px, @grey);
+    }
+}
+
+.location{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 224px;
+    height: 40px;
+    border: 1px solid #CFD3D8;
+    border-radius: 0;
+    background: inherit !important;
+    .textStyles(@regular, 400, 16px, 20px, @grey);
+
+    @media (max-width:991px) {
+        width: 90px;
+        span{
+            display: none;
+        }
+    }
+}
+
+.search{
+    width: 74px;
+    height: 40px;   
+    background: #377BE1;
+    border-radius: 0px 8px 8px 0px;
+}

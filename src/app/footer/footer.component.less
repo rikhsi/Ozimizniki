@@ -1,0 +1,139 @@
+//Миксины и переменные для стилей текста
+@grey:#86898C;
+@blackColor: #000000;
+@green: #00CD69;
+
+@bold: 'Agrofont-Bold';
+@medium: 'Agrofont-Medium';
+@regular:'Agrofont-Regular';
+
+.textStyles(@ff,@fw,@fz,@lh,@color){
+    font-family: @ff;
+    font-style: normal;
+    font-weight: @fw;
+    font-size: @fz;
+    line-height: @lh;
+    color: @color;
+}
+
+//--------------------------------
+
+.wrapper{
+    padding: 0 30px;
+    background: #EDEFF5;
+
+    @media (max-width: 1199px) {
+        padding: 0 20px;
+    }
+}
+
+.container{
+    padding: 60px 0;
+    max-width:1290px;
+    margin: 0 auto;
+
+    @media (max-width: 1199px) {
+        padding: 40px 0;
+    }
+    @media (max-width: 991px) {
+        padding: 40px 0;
+    }
+    @media (max-width: 767px) {
+        padding: 40px 0;
+    }
+
+    @media (max-width: 574px) {
+        padding: 30px 0;
+    }
+}
+
+.logo{
+    width: 220px;
+    height: 40px;
+
+    @media (max-width: 991px) {
+        width: 165px;
+        height: 30px; 
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.social__media{
+    width: 24px;
+    height: 24px;
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.rights{
+    .textStyles(@regular, 400, 14px, 18px, @grey);
+
+    @media (max-width: 991px) {
+        .textStyles(@regular, 400, 12px, 15px, @grey);
+    }
+}
+
+.privacy a{
+    .textStyles(@regular, 400, 12px, 15px, @grey);
+}
+
+dt{
+    margin-bottom: 8px;
+    .textStyles(@bold, 700, 16px, 18px, @blackColor);
+
+    @media (max-width: 1199px) {
+        margin-bottom: 10px;
+        .textStyles(@bold, 700, 14px, 18px, @blackColor);
+    }
+}
+
+dd a{
+    .textStyles(@regular, 400, 14px, 14px, @blackColor);
+
+    @media (max-width: 1199px) {
+        .textStyles(@regular, 400, 12px, 14px, @blackColor);
+    }
+}
+
+.support {
+    &__title {
+        .textStyles(@medium, 500, 16px, 18px, @blackColor);
+
+        @media (max-width: 1199px) {
+        .textStyles(@medium, 500, 14px, 18px, @blackColor);
+        }
+    }
+
+    &__info a{
+        .textStyles(@bold, 700, 18px, 24px, @green);
+
+        @media (max-width: 1199px) {
+            .textStyles(@bold, 700, 16px, 24px, @green);
+        }
+    }
+}
+
+.appMarket{
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+
+    @media (max-width: 991px) {
+        width: 150px;
+        height: 50px;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+

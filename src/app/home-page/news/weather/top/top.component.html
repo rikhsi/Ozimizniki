@@ -1,0 +1,92 @@
+<div nz-row [nzGutter]="[0,16]">
+    <div nz-col nzSpan="24">
+        <div nz-row nzJustify="space-between" nzAlign="middle">
+            <div nz-col>
+                <h3>Погода</h3>
+            </div>
+            <div nz-col>
+                <button nz-button nzType="primary" (click)="showModalMiddle()">
+                    <span>{{default}}</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.50086 6.50038C3.72402 6.27722 4.08583 6.27722 4.30899 6.50038L7.3335 9.52489L10.358 6.50038C10.5812 6.27722 10.943 6.27722 11.1661 6.50038C11.3893 6.72353 11.3893 7.08534 11.1661 7.3085L7.73756 10.7371C7.5144 10.9602 7.15259 10.9602 6.92944 10.7371L3.50086 7.3085C3.27771 7.08534 3.27771 6.72353 3.50086 6.50038Z" fill="#7C7C7C"/>
+                    </svg>        
+                </button>
+                <nz-modal [(nzVisible)]="isVisibleMiddle" nzCentered [nzFooter]="null" (nzOnCancel)="handleCancelMiddle()" (nzOnOk)="handleOkMiddle()">
+                    <ng-container *nzModalContent>
+                        <div nz-row class="modal" nzAlign="top">
+                            <div nz-col nzSpan="24">
+                                <div nz-row nzJustify="center" [nzGutter]="[0,40]">
+                                    <div nz-col>
+                                        <span class="modal__title">Ваше местоположение</span>
+                                    </div>
+                                    <div nz-col nzSpan="24">
+                                        <div nz-row>
+                                            <div nz-col nzSpan="24">
+                                                <div nz-row [nzGutter]="[0,30]">
+                                                    <div nz-col nzSpan="24">
+                                                        <input placeholder="Поиск по названию" nz-input (input)="onInput($event)" [nzAutocomplete]="auto" />
+                                                        <nz-autocomplete [nzDataSource]="options" nzBackfill #auto></nz-autocomplete>
+                                                    </div>
+                                                    <div nz-col nzSpan="24">
+                                                        <div nz-row>
+                                                            <div nz-col>
+                                                                <nz-collapse nz-row [nzGutter]="[0,32]" nzGhost>
+                                                                    <nz-collapse-panel nz-col nzSpan="24" *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active" [nzShowArrow]="false" class="helper">
+                                                                        <div nz-row [nzGutter]="[0,16]">
+                                                                            <div nz-col nzSpan="12" *ngFor="let town of panel.towns">
+                                                                                <button class="town">
+                                                                                    {{town.name}}
+                                                                               </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </nz-collapse-panel>
+                                                                </nz-collapse>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </nz-modal>
+            </div>
+        </div>
+    </div>
+    <div nz-col nzSpan="24">
+        <div nz-row [nzGutter]="[0,{xl:16,lg:10,md:4,sm:0,xs:0}]">
+            <div nz-col nzXl="24" nzLg="24" nzMd="24" nzSm="0" nzXs="0">
+                <span class="data">Сегодня, 10 февраля</span>
+            </div>
+            <div nz-col nzSpan="24">
+                <div nz-row nzAlign="bottom" [nzGutter]="{xl:16,lg:16,md:10,sm:30,xs:10}">
+                    <div nz-col>
+                        <div nz-row nzAlign="middle" [nzGutter]="[{xl:0,lg:0,md:0,sm:40,xs:20}]">
+                            <div nz-col nzXl="0" nzLg="0" nzMd="0">
+                                <span class="data">Сегодня, 10 февраля</span>
+                            </div>
+                            <div nz-col>
+                                <svg class="sun" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.875 46.35L12.4 49.875L16.9 45.4L13.35 41.85L8.875 46.35ZM27.5 56.125C28.3 56.125 32.5 56.125 32.5 56.125V48.75H27.5V56.125ZM30 13.75C26.0218 13.75 22.2064 15.3304 19.3934 18.1434C16.5804 20.9564 15 24.7718 15 28.75C15 32.7283 16.5804 36.5436 19.3934 39.3566C22.2064 42.1697 26.0218 43.75 30 43.75C33.9782 43.75 37.7936 42.1697 40.6066 39.3566C43.4197 36.5436 45 32.7283 45 28.75C45 20.45 38.275 13.75 30 13.75ZM50 31.25H57.5V26.25H50V31.25ZM43.1 45.4L47.6 49.875L51.125 46.35L46.65 41.85L43.1 45.4ZM51.125 11.15L47.6 7.625L43.1 12.1L46.65 15.65L51.125 11.15ZM32.5 1.375H27.5V8.75H32.5V1.375ZM10 26.25H2.5V31.25H10V26.25ZM16.9 12.1L12.4 7.625L8.875 11.15L13.35 15.65L16.9 12.1Z" fill="#FFB300"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div nz-col>
+                        <div nz-row [nzGutter]="{xl:16,lg:16,md:10,sm:30,xs:10}" nzAlign="middle">
+                            <div nz-col>
+                                <span class="gradus">+13°</span>
+                            </div>
+                            <div nz-col>
+                                <span class="subGradus">+2°</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

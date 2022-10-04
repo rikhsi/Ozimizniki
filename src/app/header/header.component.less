@@ -1,0 +1,42 @@
+//Миксины и переменные для стилей текста
+@grey:#86898C;
+@blackColor: #000000;
+@green: #00CD69;
+
+@bold: 'Agrofont-Bold';
+@medium: 'Agrofont-Medium';
+@regular:'Agrofont-Regular';
+
+.textStyles(@ff,@fw,@fz,@lh,@color){
+    font-family: @ff;
+    font-style: normal;
+    font-weight: @fw;
+    font-size: @fz;
+    line-height: @lh;
+    color: @color;
+}
+
+//--------------------------------
+
+.wrapper{
+    width: 100%;
+    padding: 0 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 20px rgba(26, 26, 26, 0.1);
+    overflow: hidden;
+
+    @media (max-width: 1199px) {
+        padding: 0 20px;
+    }
+}
+
+.container{
+    padding: 10px 0 16px 0;
+    max-width:1290px;
+    margin: 0 auto;
+
+    @media (max-width: 1199px) {
+        padding: 20px 0;
+    }
+}
+

@@ -1,0 +1,39 @@
+<div nz-row>
+    <div nz-col nzSpan="12">
+        <ul nz-row [nzGutter]="24" class="info">
+            <li nz-col *ngFor="let info of infos">
+                {{info.text}}
+            </li>
+        </ul>
+    </div>
+    <div nz-col nzSpan="12">
+        <div nz-row nzJustify="end" [nzGutter]="24">
+            <div nz-col>
+                <button class="location">
+                    <span>Ташкент</span>
+                    <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.501352 1.00038C0.724509 0.777219 1.08632 0.777219 1.30947 1.00038L4.33398 4.02489L7.3585 1.00038C7.58165 0.777219 7.94346 0.777219 8.16662 1.00038C8.38977 1.22353 8.38977 1.58534 8.16662 1.8085L4.73805 5.23707C4.51489 5.46023 4.15308 5.46023 3.92992 5.23707L0.501352 1.8085C0.278195 1.58534 0.278195 1.22353 0.501352 1.00038Z" fill="#7C7C7C"/>
+                    </svg>
+                </button>
+            </div>
+            <div nz-col>
+                <button nzAlign="middle" nz-dropdown [nzDropdownMenu]="menu" nzTrigger="click">
+                    Язык: 
+                    <span class="default">
+                         {{defaultLanguage}}
+                    </span>
+                    <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.501352 1.00038C0.724509 0.777219 1.08632 0.777219 1.30947 1.00038L4.33398 4.02489L7.3585 1.00038C7.58165 0.777219 7.94346 0.777219 8.16662 1.00038C8.38977 1.22353 8.38977 1.58534 8.16662 1.8085L4.73805 5.23707C4.51489 5.46023 4.15308 5.46023 3.92992 5.23707L0.501352 1.8085C0.278195 1.58534 0.278195 1.22353 0.501352 1.00038Z" fill="#7C7C7C"/>
+                    </svg>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                    <ul nz-menu>
+                        <li nz-menu-item (click)="log(language.text)" *ngFor="let language of languageList">
+                            {{language.text}}
+                        </li>
+                    </ul>
+                </nz-dropdown-menu>
+            </div>
+        </div>
+    </div>
+</div>
